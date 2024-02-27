@@ -92,7 +92,7 @@
 	--accent-regular: #3d4cad;
 	--accent-dark: #5b89ff;
 	--accent-overlay: hsla(215, 95%, 68%, 0.5);
-	--accent-subtle-overlay: hsla(281, 81%, 36%, 0.33);
+	--accent-subtle-overlay: hsla(244, 81%, 36%, 0.33);
 	--accent-text-over: var(--gray-0);
 
 	--link-color: var(--accent-dark);
