@@ -73,6 +73,30 @@
 	--theme-transition: 0.2s ease-in-out;
 }
 
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-20px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
 :root.theme-dark {
 	--gray-0: #ffffff;
 	--gray-50: #f3f4f7;
@@ -92,7 +116,7 @@
 	--accent-regular: #3d4cad;
 	--accent-dark: #5b89ff;
 	--accent-overlay: hsla(215, 95%, 68%, 0.5);
-	--accent-subtle-overlay: hsla(244, 81%, 36%, 0.33);
+	--accent-subtle-overlay: hsla(235, 78%, 43%, 0.33);
 	--accent-text-over: var(--gray-0);
 
 	--link-color: var(--accent-dark);
