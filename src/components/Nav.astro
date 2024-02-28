@@ -18,7 +18,6 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 	{ label: 'Linkedin', href: 'https://www.linkedin.com/in/jose-andres-morales-jim%C3%A9nez-87b001266?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', icon: 'linkedin-logo' },
 ];
 ---
-
 <nav>
 	<div class="menu-header">
 		<a href="/" class="site-title">
@@ -34,30 +33,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 			</template>
 		</menu-button>
 	</div>
-	<noscript>
-		<ul class="nav-items">
-			{
-				textLinks.map(({ label, href }) => (
-					<li>
-						<a
-							aria-current={Astro.url.pathname === href}
-							class:list={[
-								'link',
-								{
-									active:
-										Astro.url.pathname === href ||
-										(href !== '/' && Astro.url.pathname.startsWith(href)),
-								},
-							]}
-							href={href}
-						>
-							{label}
-						</a>
-					</li>
-				))
-			}
-		</ul>
-	</noscript>
+
 	<noscript>
 		<div class="menu-footer">
 			<div class="socials">
@@ -113,7 +89,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		</div>
 	</div>
 </nav>
-
+<div class="seccion"></div>
 <script>
 	class MenuButton extends HTMLElement {
 		constructor() {
@@ -153,13 +129,21 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 
 <style>
 	nav {
-		z-index: 9999;
-		position: relative;
+
+		z-index: +2000;
+		width: 100%;
+		margin: auto;
+		position: fixed;
 		font-family: var(--font-brand);
 		font-weight: 500;
-		margin-bottom: 3.5rem;
+		
 	}
 
+	.seccion {
+		display: block;
+		width: 100%;
+		height: 8.5em;
+	}
 	.menu-header {
 		display: flex;
 		justify-content: space-between;
