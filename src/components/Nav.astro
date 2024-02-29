@@ -74,6 +74,16 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 			}
 		</ul>
 		<div class="menu-footer">
+			<div class="socials-2">
+				{
+					iconLinks.map(({ href, icon, label }) => (
+						<a href={href} class="social">
+							<span class="sr-only">{label}</span>
+							<Icon icon={icon} />
+						</a>
+					))
+				}
+			</div>
 			<div class="theme-toggle">
 				<ThemeToggle />
 			</div>
@@ -119,7 +129,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 
 <style>
 	nav {
-	
+
 		font-family: var(--font-brand);
 		font-weight: 500;
 		
@@ -133,6 +143,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 	}
 	
 	.nav-dinamic {
+		z-index: 5;
 		right: 0;
 		width: 100%;
 		position: fixed;
@@ -161,6 +172,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 	}
 
 	.menu-button {
+		z-index: 15;
 		position: relative;
 		display: flex;
 		border: 0;
@@ -198,6 +210,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 	}
 
 	.nav-items {
+		
 		z-index: 10;
 		margin: 0;
 		display: flex;
@@ -301,7 +314,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 			position: absolute;
 			inset: -1px;
 			content: '';
-			background: var(--gradient-stroke);
+			background: radial-gradient(var(--gray-900), var(--gray-800) 150%);
 			border-radius: 999rem;
 			z-index: -1;
 		}
@@ -345,6 +358,9 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 			display: flex;
 			justify-content: flex-end;
 			gap: 0;
+		}
+		.socials-2 {
+			display: none;
 		}
 	}
 	@media (forced-colors: active) {
