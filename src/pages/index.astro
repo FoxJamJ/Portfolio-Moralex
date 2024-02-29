@@ -41,7 +41,7 @@ const projects = (await getCollection('work'))
 					</div>
 				</Hero>
 
-				<div class="animation">
+				<div>
 					<img
 						alt="Andres Morales with a red shirt"
 						width="480"
@@ -147,108 +147,6 @@ const projects = (await getCollection('work'))
 		object-position: top;
 		border-radius: 1.5rem;
 		box-shadow: var(--shadow-md);
-	}
-
-
-	.animation:hover {
-	box-shadow: 0 480 620 0px rgba(0,0,0,.1);
-	backdrop-filter: blur(1px);
-	}
-
-	.animation:hover::before, .animation:hover::after {
-	display: block;
-	content: '';
-	position: absolute;
-	aspect-ratio: 3/4;
-	width: 355;
-	height: 608px;
-	background: #1a50c4;
-	border-radius: 4.5rem;
-	z-index: -1;
-	animation: 1.3s clockwise infinite;
-	}
-
-	.animation:hover:after {
-	background: rgb(194, 22, 22);
-	animation: 2s counterclockwise infinite;
-	}
-
-	@keyframes clockwise {
-	0% {
-		top: -5px;
-		left: 0;
-	}
-	12% {
-		top: -2px;
-		left: 2px;
-	}
-	25% {
-		top: 0;
-		left: 5px;    
-	}
-	37% {
-		top: 2px;
-		left: 2px;
-	}
-	50% {
-		top: 5px;
-		left: 0;    
-	}
-	62% {
-		top: 2px;
-		left: -2px;
-	}
-	75% {
-		top: 0;
-		left: -5px;
-	}
-	87% {
-		top: -2px;
-		left: -2px;
-	}
-	100% {
-		top: -5px;
-		left: 0;    
-	}
-	}
-
-	@keyframes counterclockwise {
-	0% {
-		top: -5px;
-		right: 0;
-	}
-	12% {
-		top: -2px;
-		right: 2px;
-	}
-	25% {
-		top: 0;
-		right: 5px;    
-	}
-	37% {
-		top: 2px;
-		right: 2px;
-	}
-	50% {
-		top: 5px;
-		right: 0;    
-	}
-	62% {
-		top: 2px;
-		right: -2px;
-	}
-	75% {
-		top: 0;
-		right: -5px;
-	}
-	87% {
-		top: -2px;
-		right: -2px;
-	}
-	100% {
-		top: -5px;
-		right: 0;    
-	}
 	}
 
 	@media (min-width: 50em) {
