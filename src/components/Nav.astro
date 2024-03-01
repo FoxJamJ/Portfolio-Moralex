@@ -18,6 +18,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 	{ label: 'Linkedin', href: 'https://www.linkedin.com/in/jose-andres-morales-jim%C3%A9nez-87b001266?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', icon: 'linkedin-logo' },
 ];
 ---
+
 <nav class="nav-title">
 	<div class="menu-header">
 		<a href="/" class="site-title">
@@ -149,18 +150,20 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		display: flex;
 		justify-content: space-between;
 		gap: 0.5rem;
-		padding: 1.5rem;
+		padding: 1.5rem 0.5rem;
 	}
 
 	.site-title {
 		z-index: 20;
 		display: flex;
+		justify-content: center;
 		gap: .5rem;
 		align-items: center;
 		line-height: 1.1;
-		font-size: x-large;
+		font-size: larger;
 		color: var(--gray-0);
 		text-decoration: none;
+		padding-left: 1.5rem;
 	}
 
 	.menu_button {
@@ -170,11 +173,10 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 	}
 
 	.menu-button {
-		z-index: 15;
 		position: relative;
 		display: flex;
 		border: 0;
-		border-radius: 999rem;
+		border-radius: 1rem;
 		padding: 0.5rem;
 		font-size: 1.5rem;
 		color: var(--gray-300);
@@ -203,15 +205,13 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 
 	.menu-content {
 		position: absolute;
-		left: 0;
 		right: 0;
 	}
 
 	.nav-items {
 		z-index: 10;
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
+		display: grid;
+		place-items: center;
 		gap: 1rem;
 		font-size: var(--text-md);
 		line-height: 1.2;
@@ -240,7 +240,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		display: flex;
 		justify-content: space-between;
 		gap: 0.75rem;
-		padding: 1.5rem 2rem 1.5rem 1.5rem;
+		padding: 1.5rem 2rem 1.5rem .5rem;
 		border-radius: 0 0 0.75rem 0.75rem;
 	}
 
@@ -294,7 +294,6 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 			padding: 2.5rem 5rem;
 			gap: 1rem;
 			background-color: transparent;
-			margin-bottom: 3.5rem;
 		}
 
 		.nav-title {
@@ -303,7 +302,8 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 
 		.site-title {
 			z-index: +20;
-			font-size: var(--text-lg);
+			font-size: var(--text-xl);
+			gap: 0.5rem;
 		}
 
 		.menu-content {
@@ -311,6 +311,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		}
 
 		.nav-items {
+			display: flex;
 			position: relative;
 			flex-direction: row;
 			font-size: var(--text-sm);
@@ -349,6 +350,9 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 			background-color: var(--accent-regular);
 		}
 
+		.menu-header {
+			padding: 1.5rem;
+		}
 		.menu-footer {
 			--icon-padding: 0.375rem;
 			
@@ -368,6 +372,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		.socials-2 {
 			display: flex;
 		}
+
 	}
 
 	@media (min-width: 82em) {
@@ -382,6 +387,13 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		.menu-footer {
 			background-color: transparent;
 		}
+		.site-title {
+			padding-left: 5rem;
+		}
+		.menu-button {
+			display: none;
+		}
+		
 	}
 	@media (forced-colors: active) {
 		.link.active {
